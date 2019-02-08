@@ -1,0 +1,10 @@
+a. both of hill and simulated annealing seam to solve the problem. Both seem to do an equal job of solving the problem.
+
+b.Both seem to get done in the same amount of time.
+
+c.It does not make a difference, as the absolute maximum is the same regardless of x.
+
+d.Changing the delta effects the accuracy of the searches. It does this because the delta effects the length of the
+steps made by each search.
+
+e.
