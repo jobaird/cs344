@@ -1,3 +1,4 @@
+Exercise 2.1
 a. both of hill and simulated annealing seam to solve the problem. Both seem to do an equal job of solving the problem.
 
 b.Both seem to get done in the same amount of time.
@@ -7,4 +8,35 @@ c.It does not make a difference, as the absolute maximum is the same regardless 
 d.Changing the delta effects the accuracy of the searches. It does this because the delta effects the length of the
 steps made by each search.
 
-e.
+e.Determines how often the simulated annealing function jumps around to try to find a proper result.
+
+Exercise 2.2
+a. Hill-Climbing does not get very much farther than the initial x, if it gets any farther at all. Simulated Annealing
+does a much better job mostly, but every so often seems to come up with a wacky conclusion.
+
+b. The starting value does not seem to make much of a difference for simulated Annealing, but closer starting values
+drastically increase the accurracy of the Hill-climbing solution.
+
+c.This does not seem to affect the accuracy of the solutions as much as it did on the simple solution. The reason for
+this seems to be due to the fact that the size of the steps matters less since the solution is so much more obtuse than
+on the simple absolute value problem.
+
+d. The minimum value should be 0, and the maximum should be around 30. Hill climbing does not fair well at all in
+respect to these values, where simulated annealing gets much closer to them, but can sometimes go beyond them.
+
+Exercise 2.3
+a. Hill-climbing does much better than it did previously, and while simulated annealing seems to do get higher values,
+it breaks the constraints of the maximum value.
+
+b. on average, the value for hill climbing is 29.641, while the simulated annealing is about 39.
+
+c. The hill-climbing algorithm does better as it does not break the maximum constraints of the problem.
+
+Exercise 2.4
+a.Beam search makes the most sense for simulated annealing, since it allows it to become more accurate.
+
+d. you could maintain up to 100 or more results depending on what you consider reasonable space and time restraints.
+
+c. This could be implimented by using a breadth first search algorithm over the random restarts. It is different as it
+remembers all of the previous results and is able to compare them to each other to better find an accurate result that
+falls within constraints.

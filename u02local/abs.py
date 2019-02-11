@@ -4,7 +4,8 @@ The function is a linear function  with a single, discontinuous max value
 (see the abs function variant in graphs.py).
 
 @author: kvlinden
-@version 6feb2013
+@edited_by: job4
+@version 11feb2019
 """
 from tools.aima.search import Problem, hill_climbing, simulated_annealing, \
     exp_schedule, genetic_search
