@@ -1,0 +1,29 @@
+3.1
+
+A. AC3 is the only one that gets them done in a timely manner, but it is unable to discover the answer to the harder
+problems. Backtracking is able to solve the easier problems in a timely manner, but not the harder ones. Dpeth first and
+min conflicts are not able to solve them in a timely manner.
+
+b.select_unassigned_variable=mrv and inference=forward_checking combined sped things up a lot.
+
+3.2
+
+a. It doesn't work at any n for AC. for backtracking, it finds it still at 25 or so, but starts hanging later. For min
+conflicts, it is able to still find solutions decently fast at 2000 queens.
+
+b.Min conflicts works the best. It works best because the whole point of the n queens problem is to find the minimum
+amount of conflicts between pieces.
+
+c.It takes 47 steps at 2000 queens.
+
+3.3
+
+a. For traditional problems, it only keeps track of the initial and goal states, while csp doesnt care about the goal
+state, instead keeping track of domains, variables, constraints, and many others. The traditional search can only do
+actions and tests on the current and goal state, while csp keeps track of the current state, and is able to act based on
+changes in current state by actions that it is given.
+
+b.The heuristics deployed in the traditional problem solving method is extremely simple, yet action based, meaning for
+more complex problems, the traditional method proves to be pretty "dumb". The Constraint-based solution however, is much
+more robust, keeping track of current states, neighbor variables, and the variables themselves, but they are both action
+based systems, meaning they both need to be given specific inputs in order to work effectively.
