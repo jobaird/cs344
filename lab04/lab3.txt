@@ -1,0 +1,13 @@
+a.
+    User    -user
+Test .08811  .89278
+-test.00089  .01822
+P(test)= .98089
+i.P(User)=.089
+ii. P(test|user)= .99
+iii. P(-test|user) = .01
+iV. P(test|-user) = .98
+v. P(User|test) = P(User^test)/p(test) = .08811/(.08811+.89278) = .097
+
+b.
+
