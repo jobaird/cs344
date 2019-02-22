@@ -10,4 +10,8 @@ iV. P(test|-user) = .98
 v. P(User|test) = P(User^test)/p(test) = .08811/(.08811+.89278) = .097
 
 b.
+     Cancer     -Cancer   
+Test    .008       .095   
+-Test   .002       .895
 
+.8% chance they have cancer 9.5% chance they do not have cancer.
