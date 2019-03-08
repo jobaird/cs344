@@ -21,7 +21,16 @@ cancer = BayesNet([
     ])
 
 print(enumeration_ask('Cancer', dict(Test1=T, Test2=T), cancer).show_approx())
+'''
+P(C|T1^T2) = alpha <P(T1|C) * P(T2|C) * P(C), P(T1|-C) * P(T2|-C) * P(-C) =
+alpha * <.9*.9*.01,.2*.2*.99> = alpha * <.0081,.0396> = <.0081/(.0081+.0396),.0396/(.0081+.0396)>
+= <.17,.83>
+'''
 print(enumeration_ask('Cancer', dict(Test1=T, Test2=F), cancer).show_approx())
-'''The results do make sense, even if they are a lot lower than one may expect. The result of one failed test has
+'''
+P(C|T1^-T2) = alpha <P(T1|C) * P(-T2|C) * P(C), P(T1|-C) * P(-T2|-C) * P(-C) =
+alpha * <.9*.1*.01,.2*(1-.2)*.99> = alpha * <.0009,.1584> = <.0009/(.0009+.1584),.1584/(.0009+.1584)>
+= <.006,.994>
+The results do make sense, even if they are a lot lower than one may expect. The result of one failed test has
 a very large effect on the results of having cancer. The results are so low since the probability of having caner
 in the first place is so small.'''

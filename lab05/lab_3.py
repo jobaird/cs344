@@ -21,7 +21,18 @@ happy = BayesNet([
     ])
 
 print(enumeration_ask('Raise', dict(Sunny=T), happy).show_approx())
+'''
+P(Raise|Sunny) = alpha * <P(Raise|Sunny), P(-Raise|Sunny) = alpha * <.01 * .7,.99*.7> =
+alpha * < .007,0.693> = <.007/(.007+.693),.0693/(.007*.693)> =
+<.01,.99>
+'''
 print(enumeration_ask('Raise', dict(Happy=T, Sunny=T), happy).show_approx())
+'''
+P(Raise|Happy^Sunny) = alpha * P(Raise) * P(Happy) * P(Happy|Raise,Sunny) =
+alpha * <.01 * .07 * 1.0,.99 *.07*.07> = alpha * <.007,.4851> =
+<.007/(.007+.4851),.4851/(.007+..4851)> =
+<.014,.986>
+'''
 
 print(enumeration_ask('Raise', dict(Happy=T), happy).show_approx())
 print(enumeration_ask('Raise', dict(Happy=T, Sunny=F), happy).show_approx())
