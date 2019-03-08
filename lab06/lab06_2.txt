@@ -1,0 +1,7 @@
+Hungry Will Wait = 5/12
+Hungry Wont wait = 2/12
+Not Hungry Will Wait = 1/12
+Not Hungry Won't Wait = 4/12
+
+Entropy(Wait) - Remainder(Hungry) =
+1 - (

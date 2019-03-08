@@ -1,0 +1,30 @@
+Ex 1.
+    I would like the ML model to figure out if a email sent through Gmail is "important" or not.
+
+Ex 2.
+    The ideal outcome is that any email that us run through this system should be labelled, correctly, as important
+    or not important depending on the contents of the email.
+
+Ex 3.
+    a. The model is successful if most all emails (n emails) run through it are correctly labeled important or not.
+    b. The key results are the number of emails that are labeled correctly vs incorrectly.
+    c. The model is a failure if a great number of emails is labeled incorrectly.
+
+Ex 4.
+    a. The output of the ML model is a list or set of important emails taken from the emails given.
+    b. The output is defined as every email that is placed in the set should be defined as important by the ML system.
+
+Ex 5.
+    a. The ML output would hopefully be taken by further logic sent along to a system to sort those emails within
+    an inbox.
+    b. The outcome will be used for proper sorting of emails based on whether or not the email is deemed important.
+
+Ex 6.
+    If we did not use ML we would need to hardcode certain words or
+    phrases in the subject line that would be easily identified as important or not important.
+
+Ex 7.
+    a. The problem is best framed as a Clustering solution, which predicts the importance of an email.
+    b. Breakdown: Whether or not the email has IMPORTANT in the subject line or not.
+
+Ex 8.
