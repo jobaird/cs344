@@ -1,4 +1,4 @@
-'''
+    '''
 This module implements the Bayesian network shown in the text, Figure 14.2.
 It's taken from the AIMA Python code.
 
