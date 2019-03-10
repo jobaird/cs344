@@ -4,4 +4,6 @@ Not Hungry Will Wait = 1/12
 Not Hungry Won't Wait = 4/12
 
 Entropy(Wait) - Remainder(Hungry) =
-1 - (.96+.83)
+1 - (7/12 * -(5/7 * log(5/7)) + 2/7 * -(1/5 * log(1/5)) + 4/5 * log(4/5)) = 1-0.8043 = .1957 bits
+
+This would be better than types, as that gives us 0.0 bits of information to work with, but not as good as patrons, which gives us 0.54 bits of information as per class.
