@@ -28,3 +28,10 @@ Ex 7.
     b. Breakdown: Whether or not the email has IMPORTANT in the subject line or not.
 
 Ex 8.
+    Inputs include who the message is from, as well as the subject.
+    
+Ex 9.
+    The inputs come straight from the email itself.
+   
+Ex 10.
+    Grabbing the inputs are easy to obtain, as they are simply grabbed from the email itself.
