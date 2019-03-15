@@ -1,0 +1,18 @@
+a. Categorical data is data relevant to a category or set of non numerical objects, while numeric data is relevant to
+numerical objects.
+
+b. Task 1: "train_model(
+    learning_rate=0.00002,
+    steps=600,
+    batch_size=6
+)" Final RMSE: 166.32
+
+Task 2: "train_model(
+    learning_rate=0.00002,
+    steps=600,
+    batch_size=6,
+    input_feature="population"
+)" Final RMSE: 184.57
+
+c. The parameters learned in these exercises are the learning rate, steps taken, and batch size.
+   There are no hard rules for an algorithm for standard tuning of these parameters.

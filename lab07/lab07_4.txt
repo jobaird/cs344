@@ -1,0 +1,54 @@
+a. Task 1: The median_income scale is not at all helpful in determining income, only listing values like 3 or 4.1. The
+max house value being 500 even is strange. Some houses room count is way out of proportion from what you would expect,
+such as having 6445 bedrooms as the maximum.
+
+Task 2:Population and rooms per person is much higher in the training set than it is in the validation set.
+
+Task 3: The data was not being randomized, so the sorting of the data was causing corruption.
+
+Task 4: I put all of this into the #your code here sections:   "training_input_fn = lambda: my_input_fn(
+      training_examples,
+      training_targets["median_house_value"],
+      batch_size=batch_size)
+  predict_training_input_fn = lambda: my_input_fn(
+      training_examples,
+      training_targets["median_house_value"],
+      num_epochs=1,
+      shuffle=False)
+  predict_validation_input_fn = lambda: my_input_fn(
+      validation_examples, validation_targets["median_house_value"],
+      num_epochs=1,
+      shuffle=False)"
+
+      and
+
+    "training_predictions = linear_regressor.predict(input_fn=predict_training_input_fn)
+    training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+
+    validation_predictions = linear_regressor.predict(input_fn=predict_validation_input_fn)
+    validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])"
+
+Task 5: "california_housing_test_data = pd.read_csv("https://download.mlcc.google.com/mledu-datasets/california_housing_test.csv", sep=",")
+
+test_examples = preprocess_features(california_housing_test_data)
+test_targets = preprocess_targets(california_housing_test_data)
+
+predict_test_input_fn = lambda: my_input_fn(
+      test_examples,
+      test_targets["median_house_value"],
+      num_epochs=1,
+      shuffle=False)
+
+test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+root_mean_squared_error = math.sqrt(metrics.mean_squared_error(test_predictions, test_targets))
+
+print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)"
+
+b. I learned that in training data it is very important to have data in an unorganized random set as opposed to a full
+   organized group, as if the data is organized it may end up causing corruption in the learning process. For validation
+   I learned that it is important to check your trained set with expected outputs to see if there are any obviously
+   wrong or outlying data and to account for that in your validation. For testing, I have learned that it is extra
+   important to check against expected result, and if it is completely wrong, to go back to your data and double check
+   that nothing is organized strangely and that there are no outliers present that could be messing with your data.

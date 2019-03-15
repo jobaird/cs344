@@ -10,12 +10,12 @@ from keras.datasets import boston_housing
 
 def print_structures():
     print(
-        f'training images \
+        'training images \
             \n\tcount: {len(train_images)} \
             \n\tdimensions: {train_images.ndim} \
             \n\tshape: {train_images.shape} \
             \n\tdata type: {train_images.dtype}\n\n',
-        f'testing images \
+        'testing images \
             \n\tcount: {len(test_labels)} \
             \n\tdimensions: {train_labels.ndim} \
             \n\tshape: {test_labels.shape} \

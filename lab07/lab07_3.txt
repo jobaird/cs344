@@ -1,0 +1,35 @@
+a. Task 1: "california_housing_dataframe["rooms_per_person"] = (
+  california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"])
+
+calibration_data = train_model(
+    learning_rate=0.00005,
+    steps=500,
+    batch_size=5,
+    input_feature="rooms_per_person"
+)"
+
+Task 2: "plt.figure(figsize =(20,10))
+plt.subplot(1,2,1)
+plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+
+plt.subplot(1,2,2)
+_ = california_housing_dataframe["rooms_per_person"].hist()"
+
+Task 3: "california_housing_dataframe["rooms_per_person"] = california_housing_dataframe["rooms_per_person"].apply(
+lambda x: min(x, 5))
+
+_= california_housing_dataframe["rooms_per_person"].hist()
+
+calibration_data = train_model(
+    learning_rate = 0.00005,
+    steps=500,
+    batch_size=5,
+    input_feature="rooms_per_person"
+)
+
+_ = plt.scatter(calibration_data["predictions"], calibration_data["targets"])"
+
+b. The purpose of introducing synthetic features is to figure out the ratio between to features.
+
+c. Outliers are data points that vary wildly from the normal data points, and are often thrown out as they are not
+helpful.

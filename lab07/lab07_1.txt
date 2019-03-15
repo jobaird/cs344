@@ -1,0 +1,10 @@
+a. Exercise 1: "cities['Greater than 50 miles area and is named after a saint'] = (cities['Area square miles'] > 50) &
+               cities['City name'].apply(lambda name: name.startswith('San'))"
+               "cities"
+   Exercise 2: "cities.reindex([5,34,99])"
+
+b. One reason you might want to use pandas instead of NumPy is due to the easier graphical representation provided by
+pandas.
+
+c.It might be useful to reorder a pandas data frame in order to look at the data in a new way and find out new info
+based on that.
