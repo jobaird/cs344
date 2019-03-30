@@ -1,0 +1,12 @@
+a. seaborn is more complex than matplotlib. It also gives access to plot types that matplotlib does not have, and makes
+plots look better than matplotlib does.
+
+b. The data set has something like 397 entries, I would consider anything over 200 entries to be more than appropriate,
+as it gets hard to get data entries the more you ask for.
+
+c. Prescribed normalization makes everything share a scale. This makes it easier to compare data in a graphical manner.
+
+d. It is not a linear model, as relu is being used.
+
+e. I agree, as if you had too large of a network, then you would end up with a network that just memorized the inputs
+as opposed to actually learning from them.

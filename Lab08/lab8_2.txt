@@ -1,0 +1,37 @@
+a. FTRL manages the learning rate differently for different coefficients. It also has the learning rate passed into it
+to change it.
+
+b. Bucketing allows us to put variables into groups and sections, allowing us to assign different weights and better
+account for various outliers and divide data into various ranges.
+
+c.
+task 1:
+# Divide latitude into 10 buckets.
+  bucketized_latitude = tf.feature_column.bucketized_column(
+    latitude, boundaries=get_quantile_based_boundaries(
+      training_examples["latitude"], 10))
+
+  # Divide housing_median_age into 7 buckets.
+  bucketized_housing_median_age = tf.feature_column.bucketized_column(
+    housing_median_age, boundaries=get_quantile_based_boundaries(
+      training_examples["housing_median_age"], 7))
+
+  # Divide median_income into 7 buckets.
+  bucketized_median_income = tf.feature_column.bucketized_column(
+    median_income, boundaries=get_quantile_based_boundaries(
+      training_examples["median_income"], 7))
+
+  # Divide rooms_per_person into 7 buckets.
+  bucketized_rooms_per_person = tf.feature_column.bucketized_column(
+    rooms_per_person, boundaries=get_quantile_based_boundaries(
+      training_examples["rooms_per_person"], 7))
+The bucketing generally makes sense, but I do not necessarily understand the reason that the latitude and longitude are
+divided into 10 buckets as opposed to the 7 everything else is.
+
+Task 2:
+long_x_lat = tf.feature_column.crossed_column(
+  set([bucketized_longitude, bucketized_latitude]), hash_bucket_size=1000)
+
+
+Another possible cross feature could be median_age, latitude, longitude, as it could show when various areas were
+developed.

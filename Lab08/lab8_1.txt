@@ -1,0 +1,45 @@
+a. The pearson correlation coefficient is a measure of the linear correlation between two variables. The correlation
+between total rooms and total bedrooms makes sense, as more bedrooms would mean more rooms.
+
+b.minimal_features = [
+    "median_income",
+    "longitude",
+]
+Task 1:
+minimal_training_examples = training_examples[minimal_features]
+minimal_validation_examples = validation_examples[minimal_features]
+
+_ = train_model(
+    learning_rate=0.01,
+    steps=600,
+    batch_size=5,
+    training_examples=minimal_training_examples,
+    training_targets=training_targets,
+    validation_examples=minimal_validation_examples,
+    validation_targets=validation_targets)
+
+Task 2:
+def select_and_transform_features(source_df):
+  LATITUDE_RANGES = zip(range(32, 44), range(33, 45))
+  selected_examples = pd.DataFrame()
+  selected_examples["median_income"] = source_df["median_income"]
+  for r in LATITUDE_RANGES:
+    selected_examples["latitude_%d_to_%d" % r] = source_df["latitude"].apply(
+      lambda l: 1.0 if l >= r[0] and l < r[1] else 0.0)
+  return selected_examples
+
+selected_training_examples = select_and_transform_features(training_examples)
+selected_validation_examples = select_and_transform_features(validation_examples)
+
+_ = train_model(
+    learning_rate=0.01,
+    steps=600,
+    batch_size=5,
+    training_examples=selected_training_examples,
+    training_targets=training_targets,
+    validation_examples=selected_validation_examples,
+    validation_targets=validation_targets)
+
+RMSE: 123.03
+
+I did beat the google baseline, just increasing the step rate seemed to do the trick.
