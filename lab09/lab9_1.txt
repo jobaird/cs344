@@ -1,0 +1,8 @@
+a. It does okay, but not amazing, as it does not seem to be able to tell the difference between certain false positives.
+
+b. LogLoss punishes confidence errors pretty heavily, while l2 loss punishes them less.
+
+c.Logistic regression seems to fare a bit better, as it trends closer to the possible labels than linear regression.
+
+d.I was not able to complete this part, for some reason, no matter what I did predict_validation_input_fn was always
+undefined, so I could not get results out of this task.

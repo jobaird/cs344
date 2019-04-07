@@ -1,0 +1,16 @@
+a.
+    i. Full Size is 25000, it picks a subset of 2000 images.
+    ii. This convnet has more layers than the one in class did, and goes through more convoluting than the one in class.
+    iii. As it gets farther along it starts having moments where the entire image is black, This seems to be a sort of
+         reset.
+
+b. i. Data augmentation is artificially increasing the number of training images by performing random transformations to
+      existing pictures.
+   ii.loss: 0.4800
+	history = model.fit_generator(
+      train_generator,
+      steps_per_epoch=100,
+      epochs=30,
+      validation_data=validation_generator,
+      validation_steps=50,
+      verbose=2)

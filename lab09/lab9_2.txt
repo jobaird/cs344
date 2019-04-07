@@ -1,0 +1,11 @@
+a. We are regularizing to reduce complexity, and to make solutions more sparse
+
+b. L1 regularization does not remember all of the training data.
+
+c.  learning_rate=0.1,
+    regularization_strength=0.1,
+    steps=300,
+    batch_size=100,
+
+    Period 6: 0.24
+    Model Size 758
