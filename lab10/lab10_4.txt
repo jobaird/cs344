@@ -1,0 +1,36 @@
+a. If time is important, and you do not want to worry about overfitting a model, then you would use a linear model
+over a deep neural network model.
+
+b. The deep Neural Network model does better than the linear on the training set.
+
+c. Yes, embeddings help with sentiment analysis tasks by insuring that information is correctly conveyed through many
+layers
+
+d. Entertaining and enjoyed have similar embeddings, since they would be more likely to show up on a movie you liked.
+
+e.Training set metrics:
+loss 9.8137045
+accuracy_baseline 0.5
+global_step 1000
+recall 0.83688
+auc 0.9050286
+prediction/mean 0.5035673
+precision 0.82376564
+label/mean 0.5
+average_loss 0.39254817
+auc_precision_recall 0.9023399
+accuracy 0.82892
+---
+Test set metrics:
+loss 10.309113
+accuracy_baseline 0.5
+global_step 1000
+recall 0.82032
+auc 0.89358544
+prediction/mean 0.5045304
+precision 0.80963284
+label/mean 0.5
+average_loss 0.41236448
+auc_precision_recall 0.8904388
+accuracy 0.81372
+---

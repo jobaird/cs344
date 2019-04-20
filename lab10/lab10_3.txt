@@ -1,0 +1,6 @@
+a. The confusion matrix shows the likelihood that a handwritten digit is classified correctly or not.
+
+b. Tensor flow is making use of specified hidden units.
+
+c.At step 10 the weights seem mostly random and scattered, but at step 1000 specific features can be seen, albiet with
+some noise still.
