@@ -1,0 +1,15 @@
+
+Given: 1. on(A,B)
+       2. on(B,C)
+       3. supports(table, C)
+       4. supports(x,y) ==> on(y, x)
+       5. on(x, y) ==> above(x, y)
+       6. (above(x, y) ^ above(y, z)) ==> above(x, z)
+Prove: above(A, table)
+
+Based on 3 and 4, by setting x = table and y= C we get that on(C, table).
+Using 1 and 5, setting x= A and y=B we can get that above(A, B). 
+By repeating this for 2 and 5 with x=B and y=C we can find that above(B, C).
+By using conclusion 2 and 3 in conjunction with 6 with x=A, y=B and z=C we can find above(A, C).
+Using this in combination with our first conclusion and and 6, with
+x=A, y=C and z=table we can finally find that above(A, table).
