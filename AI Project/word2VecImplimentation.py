@@ -8,6 +8,9 @@ import gensim
 import logging
 import string
 import ssl
+import matplotlib.pyplot as plt
+
+from sklearn.manifold import TSNE
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -44,6 +47,36 @@ def word2idx(word):
 def idx2word(idx):
   return word_model.wv.index2word[idx]
 
+# tsne implimentation from:
+# https://www.kaggle.com/jeffd23/visualizing-word-vectors-with-t-sne
+def tsne_plot(model):
+    "Creates and TSNE model and plots it"
+    labels = []
+    tokens = []
+
+    for word in model.wv.vocab:
+        tokens.append(model[word])
+        labels.append(word)
+
+    tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
+    new_values = tsne_model.fit_transform(tokens)
+
+    x = []
+    y = []
+    for value in new_values:
+        x.append(value[0])
+        y.append(value[1])
+
+    plt.figure(figsize=(16, 16))
+    for i in range(len(x)):
+        plt.scatter(x[i], y[i])
+        plt.annotate(labels[i],
+                     xy=(x[i], y[i]),
+                     xytext=(5, 2),
+                     textcoords='offset points',
+                     ha='right',
+                     va='bottom')
+    plt.show()
 
 # code taken from
 # https://gist.github.com/maxim5/c35ef2238ae708ccb0e55624e9e0252b
@@ -123,3 +156,5 @@ model.fit(train_x, train_y,
           epochs=50,
           callbacks=[LambdaCallback(on_epoch_end=on_epoch_end)])
 
+
+tsne_plot(word_model)
