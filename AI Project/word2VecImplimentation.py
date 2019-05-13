@@ -2,6 +2,7 @@
 # https://medium.freecodecamp.org/how-to-get-started-with-word2vec-and-then-how-to-make-it-work-d0a2fca9dad3
 # for purpose of reading files and training word2vec
 
+import keras
 import numpy as np
 import gensim
 import logging
@@ -32,8 +33,9 @@ def print_input(input_file):
 
 def read_input(input_file):
     f = open(input_file, "r")
-    docs = f.readlines()
-    return docs
+    for i, line in enumerate(f):
+
+        yield gensim.utils.simple_preprocess(line)
 
 
 def word2idx(word):
@@ -46,7 +48,8 @@ def idx2word(idx):
 # code taken from
 # https://gist.github.com/maxim5/c35ef2238ae708ccb0e55624e9e0252b
 # for purpose of creating text generation
-def sample(preds, temperature=5.0):
+#edits done to values in attempts to get better output.
+def sample(preds, temperature=1.0):
   if temperature <= 0:
     return np.argmax(preds)
   preds = np.asarray(preds).astype('float64')
@@ -57,7 +60,7 @@ def sample(preds, temperature=5.0):
   return np.argmax(probas)
 
 
-def generate_next(text, num_generated=10):
+def generate_next(text, num_generated=20):
   word_idxs = [word2idx(word) for word in text.lower().split()]
   for i in range(num_generated):
     prediction = model.predict(x=np.array(word_idxs))
@@ -77,14 +80,12 @@ def on_epoch_end(epoch, _):
     sample = generate_next(text)
     print('%s... -> %s' % (text, sample))
 
-max_quote_len = 40
-
 max_sentence_len = 40
 with open(path) as file_:
   docs = file_.readlines()
 sentences = [[word for word in doc.lower().translate(string.punctuation).split()[:max_sentence_len]] for doc in docs]
 print('\nTraining word2vec...')
-word_model = gensim.models.Word2Vec(sentences, size=100, min_count=1, window=5, iter=100)
+word_model = gensim.models.Word2Vec(sentences, size=40, min_count=1, window=5, iter=200)
 pretrained_weights = word_model.wv.syn0
 vocab_size, emdedding_size = pretrained_weights.shape
 print('Result embedding shape:', pretrained_weights.shape)
@@ -118,6 +119,6 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
 
 model.fit(train_x, train_y,
           batch_size=128,
-          epochs=20,
+          epochs=100,
           callbacks=[LambdaCallback(on_epoch_end=on_epoch_end)])
 

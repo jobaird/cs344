@@ -30,4 +30,4 @@ def generate_ngrams(s, n):
 
 
 
-#print(generate_ngrams(contents, 20))
+print(generate_ngrams(contents, 20))
