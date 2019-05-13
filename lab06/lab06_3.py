@@ -3,7 +3,7 @@
 @created: March 9, 2019
 @copied from numbpy.ipynb
 '''
-#I was unable to get this to work due to weird tensorflow problems on my machine, but I believe this should function.
+#I was unable to get this to work due to weird tensorflow problems on my machine, but I believe this should function.--
 from keras.datasets import boston_housing
 
 (train_images, train_labels), (test_images, test_labels) = boston_housing.load_data()

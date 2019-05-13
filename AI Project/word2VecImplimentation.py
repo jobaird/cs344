@@ -75,6 +75,7 @@ def on_epoch_end(epoch, _):
       'the guide',
       'arthur dent',
       'zaphod',
+      'the answer',
   ]
   for text in texts:
     sample = generate_next(text)
@@ -90,7 +91,7 @@ pretrained_weights = word_model.wv.syn0
 vocab_size, emdedding_size = pretrained_weights.shape
 print('Result embedding shape:', pretrained_weights.shape)
 print('Checking similar words:')
-for word in ['universe', 'guide', 'arthur', 'zaphod']:
+for word in ['universe', 'guide', 'arthur', 'zaphod', 'answer']:
   most_similar = ', '.join('%s (%.2f)' % (similar, dist) for similar, dist in word_model.most_similar(word)[:8])
   print('  %s -> %s' % (word, most_similar))
 
@@ -118,7 +119,7 @@ model.compile(optimizer='adam', loss='sparse_categorical_crossentropy')
 
 
 model.fit(train_x, train_y,
-          batch_size=128,
-          epochs=100,
+          batch_size=256,
+          epochs=50,
           callbacks=[LambdaCallback(on_epoch_end=on_epoch_end)])
 
